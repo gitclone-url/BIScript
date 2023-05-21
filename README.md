@@ -31,13 +31,16 @@ After extraction you will find a BIScript folder 📁
 
 Copy or move it to internal storage.
 
-- Download **Termux** app from [**Here**](https://github.com/HardcodedCat/termux-monet/releases)
+- Download **Termux** app from [**Here**](https://github.com/HardcodedCat/termux-monet/releases) 
+
+Note📜 :- This script can also be used in any linux shell environment
 
 - Now Download Official Magisk or Magisk delta 
 
 - install and open then Patch your boot image
 
-![IMG_20230520_140321_527](https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/19f01311-b096-478c-bdc7-a5f0e97df4fc)
+![IMG_20230521_120505_641](https://github.com/gitclone-url/BIScript/assets/98699436/be31a39e-f236-4876-bc5a-51f3aff37cec)
+
 
 After it's done ✅
 
