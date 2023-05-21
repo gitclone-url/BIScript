@@ -27,7 +27,7 @@ First of All Download the BIScript.zip from
 - Extract the zip with zarchiver or other zip extractor apps
 
 After extraction you will find a BIScript folder 📁
-![Screenshot_20230520-135056](https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/a505a282-149c-4d46-988a-f4744d45d908)
+![Screenshot](https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/a505a282-149c-4d46-988a-f4744d45d908)
 
 Copy or move it to internal storage.
 
@@ -39,7 +39,7 @@ Note📜 :- This script can also be used in any linux shell environment
 
 - install and open then Patch your boot image
 
-![IMG_20230521_120505_641](https://github.com/gitclone-url/BIScript/assets/98699436/be31a39e-f236-4876-bc5a-51f3aff37cec)
+![IMG](https://github.com/gitclone-url/BIScript/assets/98699436/be31a39e-f236-4876-bc5a-51f3aff37cec)
 
 
 After it's done ✅
@@ -47,9 +47,9 @@ After it's done ✅
 You need to copy the Patched boot image from download folder 📁 to BIScript folder
 And rename it to `boot.img`
 
-![Screenshot_20230520-140105](https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/a0d27951-c4cc-4783-9c25-af02395f68ef)
+![Screenshot](https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/a0d27951-c4cc-4783-9c25-af02395f68ef)
 
-![Screenshot_20230520-140915](https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/5dad0371-e401-47bb-a49e-2e5914391af0)
+![Screenshot](https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/5dad0371-e401-47bb-a49e-2e5914391af0)
 
 - Now Open termux application allow storage permission 
 
@@ -66,7 +66,7 @@ cd /storage/emulated/0/BIScript
 chmod +x BIScript.sh
 ```
 
-![Screenshot_20230520-142537](https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/ad401010-b3dc-4112-9860-33728eb74219)
+![Screenshot](https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/ad401010-b3dc-4112-9860-33728eb74219)
 
 - Now Run the script by this command :
 
@@ -75,7 +75,7 @@ bash BIScript.sh
 ``` 
 It will automatically download necessary packagees and sign the images just wait until it finish after it's done you Will see a success message
 
-![Screenshot_20230520-143534](https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/22e01b6d-635b-41ca-9d26-03f4932da0aa)
+![Screenshot](https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/22e01b6d-635b-41ca-9d26-03f4932da0aa)
 
 - Now just follow this [**Guide**] and flash it 🙂
 
