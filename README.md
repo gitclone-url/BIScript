@@ -1,4 +1,4 @@
-# BIScript
+# BIScript 🚀
 
 **𝘼 𝙗𝙤𝙤𝙩 𝙞𝙢𝙖𝙜𝙚 𝙨𝙞𝙜𝙣𝙞𝙣𝙜 𝙨𝙘𝙧𝙞𝙥𝙩 𝙛𝙤𝙧 𝙪𝙣𝙞𝙨𝙤𝙘 𝙘𝙝𝙞𝙥𝙨𝙚𝙩 𝙗𝙖𝙨𝙚𝙙 𝙥𝙝𝙤𝙣𝙚𝙨** 
 
@@ -85,7 +85,7 @@ My main purpose behind making this script was to support only those 4 devices i 
 
 I don't guarantees that this script will work on other unisoc chipset based phones because some oems uses private (.pem) key to sign partition and you'll Need that key just even for unlocking bootloader If you want to use this script on your phone than you need to change the commands in the script **line 88** replace`Partition size` `Algorithm` value according to your boot image info and you'll also need to change **(.pem)** key to sign it but first you need to create a custom signed vbmeta according to this [**Tutorial**](https://www.hovatek.com/forum/thread-32664.html) Then you can use the private key to sign images.you can use [**Vbmeta keys Extractor**](https://github.com/Fijxu/VBMetaKeysExtractor-Linux) for this work.Also if somebody wants they can use the vbmeta-sign image that i have provided in the zip because most of the unisoc oem uses the same keys to sign the vbmeta,if my vbmeta works on your phone than you can use my boot.pem key provided in the zip to sign your boot image too.
 
-## **𝗡𝗼𝘁𝗶𝗰𝗲 📌:**
+#### **Acknowledgment 📚:**
 
 If you decide to use or modify my script and those files for your own purposes, it is appreciated if you give credit to me by mentioning my name or providing a link to my GitHub profile. Acknowledging the work of others promotes collaboration and supports the open-source community.
 
@@ -98,7 +98,7 @@ If you decide to use or modify my script and those files for your own purposes, 
 The tutorials and information shared in this threads were instrumental in the development of this script.
 
 
-## Disclaimer:
+## Disclaimer❗
 
 This script is provided as-is, without any warranties or guarantees of any kind. The author of this script, Abhijeet, cannot be held responsible for any damages or issues that may arise from flashing the signed boot image by using this script.Use this script at your own risk, and make sure to fully understand the implications and consequences of flashing a boot image. The author and contributors of this script cannot be held liable for any negative outcomes resulting from the use of this script or the flashing of a boot image
 It is recommended to thoroughly understand and review the script before using it.
