@@ -77,7 +77,7 @@ It will automatically download necessary packagees and sign the images just wait
 
 ![Screenshot](https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/22e01b6d-635b-41ca-9d26-03f4932da0aa)
 
-- Now just follow this [**Guide**] and flash it 🙂
+- Now just follow this [**Guide**](you and flash it 🙂
 
 ## Additional note 📜
 
