@@ -13,7 +13,7 @@ echo ""
 echo "𝔸 𝕓𝕠𝕠𝕥 𝕚𝕞𝕒𝕘𝕖 𝕤𝕚𝕘𝕟𝕚𝕟𝕘 𝕤𝕔𝕣𝕚𝕡𝕥 𝕗𝕠𝕣 𝕦𝕟𝕚𝕤𝕠𝕔 𝕔𝕙𝕚𝕡𝕤𝕖𝕥 𝕓𝕒𝕤𝕖𝕕 𝕡𝕙𝕠𝕟𝕖𝕤"
 sleep 0.5
 echo ""
-echo "                      - Mᴀᴅᴇ ʙʏ Aʙʜɪᴊᴇᴇᴛ"
+echo "                      - 𝙼𝚊𝚍𝚎 𝚋𝚢 𝙰𝚋𝚑𝚒𝚓𝚎𝚎𝚝"
 echo "      *************************************************"
 
 # Function to display error message in red color
@@ -85,8 +85,9 @@ echo "Done ✅"
 echo "___________________________________________________________"
 
 # sign the boot image using Python2 and avbtool  with the extracted fingerprint value.
-if ! python2 avbtool add_hash_footer --image boot.img --partition_name boot --partition_size 67108864 --key boot.pem --algorithm SHA256_RSA4096 --prop "com.android.build.boot.fingerprint:$fingerprint" --prop com.android.build.boot.os_version:11; then
-    print_error "Failed to 'sign boot image!'.Please make sure the 'boot.img' file is placed in the folder."
+python2 avbtool add_hash_footer --image boot.img --partition_name boot --partition_size 67108864 --key boot.pem --algorithm SHA256_RSA4096 --prop com.android.build.boot.fingerprint:$fingerprint --prop com.android.build.boot.os_version:11
+if [ $? -ne 0 ]; then
+print_error "Failed to 'sign boot image!'.Please make sure the 'boot.img' file is placed in the folder."
     exit 1
 fi
 
