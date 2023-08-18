@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Stylish header message
-echo "      *********************000 of 000******************"                                
+echo "      *********************000 of 000******************"
 echo "             ____ ___ ____            _       _   "
 echo "            | __ )_ _/ ___|  ___ _ __(_)_ __ | |_ "
 echo "            |  _ \| |\___ \ / __| '__| | '_ \| __|"
@@ -10,7 +10,7 @@ echo "            |____/___|____/ \___|_|  |_| .__/ \__|"
 echo "                                       |_|        "   
 sleep 0.5
 echo ""
-echo "𝔸 𝕓𝕠𝕠𝕥 𝕚𝕞𝕒𝕘𝕖 𝕤𝕚𝕘𝕟𝕚𝕟𝕘 𝕤𝕔𝕣𝕚𝕡𝕥 𝕗𝕠𝕣 𝕦𝕟𝕚𝕤𝕠𝕔 𝕔𝕙𝕚𝕡𝕤𝕖𝕥 𝕓𝕒𝕤𝕖𝕕 𝕡𝕙𝕠𝕟𝕖𝕤"
+echo "  𝔸 𝕓𝕠𝕠𝕥 𝕚𝕞𝕒𝕘𝕖 𝕤𝕚𝕘𝕟𝕚𝕟𝕘 𝕤𝕔𝕣𝕚𝕡𝕥 𝕗𝕠𝕣 𝕦𝕟𝕚𝕤𝕠𝕔 𝕔𝕙𝕚𝕡𝕤𝕖𝕥 𝕓𝕒𝕤𝕖𝕕 𝕡𝕙𝕠𝕟𝕖𝕤"
 sleep 0.5
 echo ""
 echo "                      - 𝙼𝚊𝚍𝚎 𝚋𝚢 𝙰𝚋𝚑𝚒𝚓𝚎𝚎𝚝"
@@ -22,7 +22,7 @@ print_error() {
 }
 
 # Function to display success message in green color.
-function successful_message {
+function success_message {
     echo -e "\033[32m$1\033[0m"
 }
 
@@ -30,7 +30,6 @@ function successful_message {
 function info_message {
     echo -e "\033[34m$1\033[0m"
 }
-
 
 # Update and upgrade termux packages.
 if ! apt update && apt upgrade -y; then
@@ -47,12 +46,12 @@ if ! command -v python2 &> /dev/null; then
         print_error "Python 2 installation failed."
         exit 1
     fi
-    successful_message "Python 2 installed successfully."
+    success_message "Python 2 installed successfully."
 else
     info_message "Python 2 is already installed."
 fi
 echo "" 
-echo "--------------------------------------"
+echo "----------------------------------"
 # Check if OpenSSL is installed if not then install it.
 if ! command -v openssl &> /dev/null; then
     info_message "OpenSSL Tool is not installed. Installing..."
@@ -60,14 +59,14 @@ if ! command -v openssl &> /dev/null; then
         print_error "OpenSSL Tool installation failed."
         exit 1
     fi
-    successful_message "OpenSSL Tool installed successfully."
+    success_message "OpenSSL Tool installed successfully."
 else
     info_message "OpenSSL Tool is already installed."
 fi
 echo "--------------------------------------"
 
 info_message "checking Boot image info please wait..."
-echo "--------------------------------------"
+echo "------------------------------------------"
 sleep 3
 echo ""
 # check boot image info with avbtool and extract and grep fingerprint value.
@@ -80,21 +79,26 @@ fingerprint=$(echo "$output" | grep "com.android.build.boot.fingerprint" | awk -
 
 info_message "Signing in progress please wait..."
 sleep 10
+# Sign the boot image using Python2 and avbtool with the extracted fingerprint value.
+output=$(python2 avbtool add_hash_footer --image boot.img --partition_name boot --partition_size 67108864 --key boot.pem --algorithm SHA256_RSA4096 --prop com.android.build.boot.fingerprint:$fingerprint --prop com.android.build.boot.os_version:11 2>&1)
+sign_exit_status=$?
+
+if [ $sign_exit_status -ne 0 ]; then
+   errors=$(echo "$output" | grep -E ".*")
+     if [ -n "$errors" ]; then
+       echo "Error! :$errors"
+    fi
+fi
 echo ""
 echo "Done ✅"
 echo "___________________________________________________________"
 
-# sign the boot image using Python2 and avbtool  with the extracted fingerprint value.
-python2 avbtool add_hash_footer --image boot.img --partition_name boot --partition_size 67108864 --key boot.pem --algorithm SHA256_RSA4096 --prop com.android.build.boot.fingerprint:$fingerprint --prop com.android.build.boot.os_version:11
-if [ $? -ne 0 ]; then
-print_error "Failed to 'sign boot image!'.Please make sure the 'boot.img' file is placed in the folder."
-    exit 1
-fi
-
 message="Boot image signing done! You can now flash the signed boot Image to your phone."
 
-length=$((${#message} + 0))
+length=${#message}
 
-printf "\n%s\n" "$(printf '%*s' $length | tr ' ' '-')"
-printf "\033[32m%s\033[0m\n" "$(printf ' %s ' "$message")"
-printf "%s\n\n" "$(printf '%*s' $length | tr ' ' '-')"
+printf "%s\n" "$(printf '%*s' $length | tr ' ' '-')"
+printf "\033[32m%s\033[0m\n" "$message"
+printf "%s\n" "$(printf '%*s' $length | tr ' ' '-')"
+
+exit 0
