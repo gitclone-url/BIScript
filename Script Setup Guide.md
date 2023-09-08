@@ -1,3 +1,5 @@
+# BootSigner Script Installation Guide
+
 # Advisory:
 
 Kindly be informed that the initial execution of the script on your Termux may necessitate a certain duration. This is due to the requirement for the script to perform package updates and upgrades as part of the initial setup process. Additionally, the installation of Python 3 is necessary, as it is a prerequisite for running the main BootSigner script.
@@ -8,31 +10,58 @@ Kindly be informed that the initial execution of the script on your Termux may n
 
 • Ensure an active internet connection is available for the initial setup to update and upgrade packages.
   
+---
+
 **Script Running Steps:**
 
-1. Copy the entire BIScript folder to the internal storage of your device.
+**Step 1:** Download the BIScript.zip file from the [Releases](https://github.com/gitclone-url/BIScript/releases) section.
 
-2. Apply the Magisk patch to the boot image.
+**Step 2:** Extract the zip file using ZArchiver or any other zip extractor app.
 
-3. Move the Magisk-patched boot.img to the BIScript folder, and make sure to rename it to 'boot.img'.
+**Step 3:** After extraction, you will see a folder named "BIScript."
 
-4. Open Termux and grant storage permissions.
+<img src="https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/a505a282-149c-4d46-988a-f4744d45d908" alt="Screenshot" width="500" height="auto">
 
-5. Navigate to the BIScript folder using the following command:
-   ```
-   cd /storage/emulated/0/BIScript
-   ```
+**Step 4:** Copy or move the "BIScript" folder to your device's internal storage.
 
-6. Make the bash script executable with the following command:
-   ```
-   chmod +x BIScript.sh
-   ```
+**Step 5:** Download the [Termux app](https://github.com/HardcodedCat/termux-monet/releases).
 
-7. Execute the script using the following command:
-   ```
-   bash BIScript.sh
-   ```
+**Step 6:** Download Official Magisk or Magisk delta and install it. Patch your boot image.
 
-8. Wait for a few minutes to allow the main script to start.
+<img src="https://github.com/gitclone-url/BIScript/assets/98699436/be31a39e-f236-4876-bc5a-51f3aff37cec" alt="Screenshot" width="500" height="auto">
 
-*************************************************
+**Step 7:** After patching, copy the patched boot image from the download folder to the "BIScript" folder and rename it to `boot.img`.
+
+<img src="https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/a0d27951-c4cc-4783-9c25-af02395f68ef" alt="Screenshot" width="500" height="auto">
+
+<img src="https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/5dad0371-e401-47bb-a49e-2e5914391af0" alt="Screenshot" width="500" height="auto">
+
+**Step 8:** Open the Termux application and grant storage permission.
+
+**Step 9:** After setup, you will see the Termux interface.
+
+**Step 10:** Change the directory to the "BIScript" folder with this command:
+```
+cd /storage/emulated/0/BIScript
+```
+
+**Step 11:** Make the script executable with this command:
+```
+chmod +x BIScript.sh
+```
+
+<img src="https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/ad401010-b3dc-4112-9860-33728eb74219" alt="Screenshot" width="500" height="auto">
+
+**Step 12:** Run the script with this command:
+```
+bash BIScript.sh
+```
+
+Wait for a few minutes for the main script to start.
+It will automatically download necessary packages and sign the images. Wait until it finishes; you will see a success message.
+
+<img src="https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/22e01b6d-635b-41ca-9d26-03f4932da0aa" alt="Screenshot" width="500" height="auto">
+
+* Now Follow this [guide](https://github.com/gitclone-url/SPD-T610-Phones-Rooting-Tutorial) to flash the signed boot image.
+
+---
