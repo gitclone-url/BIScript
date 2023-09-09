@@ -1,4 +1,4 @@
-# BootSigner Script Installation Guide
+# Script Setup Guide
 
 # Advisory:
 
@@ -58,10 +58,8 @@ bash BIScript.sh
 ```
 
 Wait for a few minutes for the main script to start.
-It will automatically download necessary packages and sign the images. Wait until it finishes; you will see a success message.
+It will automatically download necessary packages and sign the image. Wait until it finishes; you will see a success message.
 
-<img src="https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/22e01b6d-635b-41ca-9d26-03f4932da0aa" alt="Screenshot" width="500" height="auto">
+<img src="https://github.com/UnknownShakib/BIScript/assets/124501955/cb85fb51-0dec-416e-a1d8-7aa36a598a19" alt="Screenshot" width="500" height="auto">
 
-* Now Follow this [guide](https://github.com/gitclone-url/SPD-T610-Phones-Rooting-Tutorial) to flash the signed boot image.
-
----
+Now Follow this [guide](https://github.com/gitclone-url/SPD-T610-Phones-Rooting-Tutorial) to flash the signed boot image.
