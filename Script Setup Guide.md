@@ -34,7 +34,7 @@ Kindly be informed that the initial execution of the script on your Termux may n
 
 <img src="https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/a0d27951-c4cc-4783-9c25-af02395f68ef" alt="Screenshot" width="500" height="auto">
 
-<img src="https://github.com/gitclone-url/android_device_micromax_E7544/assets/98699436/5dad0371-e401-47bb-a49e-2e5914391af0" alt="Screenshot" width="500" height="auto">
+<img src="https://github.com/gitclone-url/BIScript/assets/98699436/8b964223-8f23-4ae9-be4b-23131b0dc088" alt="Screenshot" width="500" height="auto">
 
 **Step 8:** Open the Termux application and grant storage permission.
 
